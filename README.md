@@ -1,4 +1,9 @@
-# Secure File Processor (Cyberon)
+# Cyberon
+
+[![Download APK](https://img.shields.io/badge/Download-APK-neon_blue)](releases/Cyberon-v1.0.apk)
+
+A secure, high-performance file sharing and processing application.
+
 
 A secure, high-performance Android application that calculates file checksums (CRC32/SHA256) using a native C++ library integrated via JNI.
 
