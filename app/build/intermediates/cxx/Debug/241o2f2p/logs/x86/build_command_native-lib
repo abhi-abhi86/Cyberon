@@ -1,0 +1,4 @@
+/Users/mg/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/mg/Downloads/Cyberon/app/.cxx/Debug/241o2f2p/x86 \
+  native-lib

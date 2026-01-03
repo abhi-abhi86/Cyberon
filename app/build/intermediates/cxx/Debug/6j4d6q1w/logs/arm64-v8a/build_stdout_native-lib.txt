@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/mg/Downloads/Cyberon/app/.cxx/Debug/6j4d6q1w/arm64-v8a'
+ninja: no work to do.
