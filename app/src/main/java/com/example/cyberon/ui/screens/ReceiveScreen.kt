@@ -49,7 +49,7 @@ fun ReceiveScreen(p2pManager: P2PManager) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Brush.radialGradient(listOf(CyberDark, CyberBlack), radius = 1000f))
+            .background(Brush.radialGradient(listOf(CyberColors.CyberDark, CyberColors.CyberBlack), radius = 1000f))
             .padding(top = 48.dp, bottom = 16.dp), // Adjust for BottomBar padding safe area
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -58,13 +58,13 @@ fun ReceiveScreen(p2pManager: P2PManager) {
             Text(
                 "RECEIVE MODE",
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 2.sp),
-                color = NeonBlue
+                color = CyberColors.NeonBlue
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 "Broadcast visible to nearby devices",
                 style = MaterialTheme.typography.bodyMedium,
-                color = CyberTextSecondary
+                color = CyberColors.CyberTextSecondary
             )
         }
 
@@ -80,16 +80,16 @@ fun ReceiveScreen(p2pManager: P2PManager) {
                 val strokeWidth3 = 6.dp.toPx()
                 
                 drawCircle(
-                    color = NeonBlue.copy(alpha = 0.1f), 
+                    color = CyberColors.NeonBlue.copy(alpha = 0.1f), 
                     style = androidx.compose.ui.graphics.drawscope.Stroke(width = strokeWidth1)
                 )
                 drawCircle(
-                    color = NeonBlue.copy(alpha = 0.05f), 
+                    color = CyberColors.NeonBlue.copy(alpha = 0.05f), 
                     radius = size.minDimension / 2.5f, 
                     style = androidx.compose.ui.graphics.drawscope.Stroke(width = strokeWidth2)
                 )
                 drawCircle(
-                    color = NeonPurple.copy(alpha = 0.05f), 
+                    color = CyberColors.NeonPurple.copy(alpha = 0.05f), 
                     radius = size.minDimension / 3.5f, 
                     style = androidx.compose.ui.graphics.drawscope.Stroke(width = strokeWidth3)
                 )
@@ -101,7 +101,7 @@ fun ReceiveScreen(p2pManager: P2PManager) {
                     .size(300.dp)
                     .rotate(rotation)
                     .border(
-                        border = BorderStroke(2.dp, Brush.sweepGradient(listOf(Color.Transparent, NeonBlue, Color.Transparent))),
+                        border = BorderStroke(2.dp, Brush.sweepGradient(listOf(Color.Transparent, CyberColors.NeonBlue, Color.Transparent))),
                         shape = CircleShape
                     )
             )
@@ -111,17 +111,17 @@ fun ReceiveScreen(p2pManager: P2PManager) {
                 modifier = Modifier
                     .size(140.dp)
                     .scale(pulse)
-                    .background(NeonBlue.copy(alpha = 0.15f), CircleShape)
-                    .border(2.dp, NeonBlue.copy(alpha = 0.5f), CircleShape)
+                    .background(CyberColors.NeonBlue.copy(alpha = 0.15f), CircleShape)
+                    .border(2.dp, CyberColors.NeonBlue.copy(alpha = 0.5f), CircleShape)
             )
 
             // Center Icon
             Box(
                  modifier = Modifier
                      .size(100.dp)
-                     .background(CyberSurface, CircleShape)
-                     .border(2.dp, NeonBlue, CircleShape)
-                     .shadow(elevation = 16.dp, shape = CircleShape, spotColor = NeonBlue, ambientColor = NeonBlue),
+                     .background(CyberColors.CyberSurface, CircleShape)
+                     .border(2.dp, CyberColors.NeonBlue, CircleShape)
+                     .shadow(elevation = 16.dp, shape = CircleShape, spotColor = CyberColors.NeonBlue, ambientColor = CyberColors.NeonBlue),
                  contentAlignment = Alignment.Center
             ) {
                  Icon(Icons.Default.QrCode, null, tint = Color.White, modifier = Modifier.size(48.dp))
@@ -132,14 +132,14 @@ fun ReceiveScreen(p2pManager: P2PManager) {
 
         // Device Info Card
         Card(
-            colors = CardDefaults.cardColors(containerColor = CyberSurface),
+            colors = CardDefaults.cardColors(containerColor = CyberColors.CyberSurface),
             shape = RoundedCornerShape(24.dp),
-            border = BorderStroke(1.dp, Brush.horizontalGradient(listOf(NeonPurple.copy(alpha=0.5f), Color.Transparent))),
+            border = BorderStroke(1.dp, Brush.horizontalGradient(listOf(CyberColors.NeonPurple.copy(alpha=0.5f), Color.Transparent))),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 24.dp)
                 .padding(bottom = 16.dp)
-                .shadow(elevation = 8.dp, shape = RoundedCornerShape(24.dp), spotColor = NeonPurple, ambientColor = NeonPurple)
+                .shadow(elevation = 8.dp, shape = RoundedCornerShape(24.dp), spotColor = CyberColors.NeonPurple, ambientColor = CyberColors.NeonPurple)
         ) {
             Row(
                 modifier = Modifier.padding(20.dp),
@@ -147,10 +147,10 @@ fun ReceiveScreen(p2pManager: P2PManager) {
             ) {
                 // Device Icon
                 Box(
-                    modifier = Modifier.size(48.dp).background(CyberDark, RoundedCornerShape(12.dp)),
+                    modifier = Modifier.size(48.dp).background(CyberColors.CyberDark, RoundedCornerShape(12.dp)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.Default.Smartphone, null, tint = NeonBlue)
+                    Icon(Icons.Default.Smartphone, null, tint = CyberColors.NeonBlue)
                 }
                 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -161,15 +161,15 @@ fun ReceiveScreen(p2pManager: P2PManager) {
                 }
             }
             
-            Divider(color = CyberDark, thickness = 1.dp)
+            Divider(color = CyberColors.CyberDark, thickness = 1.dp)
             
             Row(
                 modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(Icons.Default.Security, null, tint = NeonPurple, modifier = Modifier.size(16.dp))
+                Icon(Icons.Default.Security, null, tint = CyberColors.NeonPurple, modifier = Modifier.size(16.dp))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Connection Encrypted", color = CyberTextSecondary, style = MaterialTheme.typography.labelSmall)
+                Text("Connection Encrypted", color = CyberColors.CyberTextSecondary, style = MaterialTheme.typography.labelSmall)
             }
         }
     }

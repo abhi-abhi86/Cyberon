@@ -39,7 +39,7 @@ fun TransferProgressScreen(onCancel: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Brush.verticalGradient(listOf(CyberBlack, CyberDark)))
+            .background(Brush.verticalGradient(listOf(CyberColors.CyberBlack, CyberColors.CyberDark)))
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -47,12 +47,12 @@ fun TransferProgressScreen(onCancel: () -> Unit) {
         Text(
             text = "TRANSFER IN PROGRESS",
             style = MaterialTheme.typography.titleLarge.copy(letterSpacing = 1.sp),
-            color = NeonBlue
+            color = CyberColors.NeonBlue
         )
         Text(
             text = "Sending data to remote device...",
             style = MaterialTheme.typography.labelMedium,
-            color = CyberTextSecondary
+            color = CyberColors.CyberTextSecondary
         )
 
         Spacer(modifier = Modifier.height(48.dp))
@@ -62,47 +62,47 @@ fun TransferProgressScreen(onCancel: () -> Unit) {
              CircularProgressIndicator(
                 progress = 1f,
                 modifier = Modifier.fillMaxSize(),
-                color = CyberSurface,
+                color = CyberColors.CyberSurface,
                 strokeWidth = 20.dp,
                 strokeCap = StrokeCap.Round
             )
             CircularProgressIndicator(
                 progress = 0.67f,
                 modifier = Modifier.fillMaxSize(),
-                color = NeonPurple,
+                color = CyberColors.NeonPurple,
                 trackColor = Color.Transparent,
                 strokeWidth = 20.dp,
                 strokeCap = StrokeCap.Round
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("67%", fontSize = 56.sp, fontWeight = FontWeight.Bold, color = Color.White)
-                Text("12 MB/s", style = MaterialTheme.typography.labelMedium, color = NeonBlue)
+                Text("12 MB/s", style = MaterialTheme.typography.labelMedium, color = CyberColors.NeonBlue)
             }
         }
         
         Spacer(modifier = Modifier.height(24.dp))
-        Text("2 of 3 files sent", color = CyberTextSecondary)
+        Text("2 of 3 files sent", color = CyberColors.CyberTextSecondary)
 
         Spacer(modifier = Modifier.height(48.dp))
 
         Surface(
             shape = RoundedCornerShape(16.dp),
-            color = CyberSurface,
+            color = CyberColors.CyberSurface,
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(modifier = Modifier.padding(20.dp)) {
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text("Current File", color = CyberTextSecondary, style = MaterialTheme.typography.labelSmall)
+                    Text("Current File", color = CyberColors.CyberTextSecondary, style = MaterialTheme.typography.labelSmall)
                     Text("3.4 MB / 5.1 MB", color = Color.White, style = MaterialTheme.typography.labelSmall)
                 }
                 Spacer(modifier = Modifier.height(8.dp))
-                Text("Project_Alpha_V2.pdf", color = NeonBlue, fontWeight = FontWeight.Bold, maxLines = 1)
+                Text("Project_Alpha_V2.pdf", color = CyberColors.NeonBlue, fontWeight = FontWeight.Bold, maxLines = 1)
                 Spacer(modifier = Modifier.height(12.dp))
                 LinearProgressIndicator(
                     progress = 0.67f, 
                     modifier = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp)), 
-                    color = NeonBlue, 
-                    trackColor = CyberDark
+                    color = CyberColors.NeonBlue, 
+                    trackColor = CyberColors.CyberDark
                 )
                 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -132,7 +132,7 @@ fun TransferProgressScreen(onCancel: () -> Unit) {
 @Composable
 fun StatItem(label: String, value: String) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(label, style = MaterialTheme.typography.labelSmall, color = CyberTextSecondary)
+        Text(label, style = MaterialTheme.typography.labelSmall, color = CyberColors.CyberTextSecondary)
         Text(value, style = MaterialTheme.typography.bodyMedium, color = Color.White, fontWeight = FontWeight.Bold)
     }
 }

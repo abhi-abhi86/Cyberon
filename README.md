@@ -1,8 +1,14 @@
 # Cyberon
 
-[![Download APK](https://img.shields.io/badge/Download-APK-neon_blue)](releases/Cyberon-v1.0.apk)
+### 📥 Download
+- **[v2.1 (Glassmorphism UI & Features)](https://github.com/abhi-abhi86/Cyberon/raw/main/releases/Cyberon-v2.1-debug.apk)** - Latest
+- [v1.0 (Initial Release)](https://github.com/abhi-abhi86/Cyberon/raw/main/releases/Cyberon-v1.0.apk)
 
-A secure, high-performance file sharing and processing application.
+### 📸 Features
+- **Glassmorphism UI**: Neon styling, liquid ripple effects.
+- **UDP Discovery**: Fast local peer finding.
+- **Transfer History & Settings**: Full control.
+
 
 
 A secure, high-performance Android application that calculates file checksums (CRC32/SHA256) using a native C++ library integrated via JNI.

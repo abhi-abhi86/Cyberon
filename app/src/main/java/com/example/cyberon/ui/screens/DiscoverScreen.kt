@@ -62,7 +62,7 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Brush.verticalGradient(listOf(CyberBlack, CyberDark)))
+            .background(Brush.verticalGradient(listOf(CyberColors.CyberBlack, CyberColors.CyberDark)))
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -70,12 +70,12 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
         Text(
             text = "DISCOVER DEVICES",
             style = MaterialTheme.typography.titleLarge.copy(letterSpacing = 2.sp),
-            color = NeonBlue
+            color = CyberColors.NeonBlue
         )
         Text(
             text = "Find nearby devices to share files securely",
             style = MaterialTheme.typography.labelMedium,
-            color = CyberTextSecondary
+            color = CyberColors.CyberTextSecondary
         )
 
         Spacer(modifier = Modifier.height(48.dp))
@@ -93,8 +93,8 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
                             Brush.sweepGradient(
                                 listOf(
                                     Color.Transparent,
-                                    NeonBlue.copy(alpha = 0.1f),
-                                    NeonBlue.copy(alpha = 0.5f)
+                                    CyberColors.NeonBlue.copy(alpha = 0.1f),
+                                    CyberColors.NeonBlue.copy(alpha = 0.5f)
                                 )
                             )
                         )
@@ -103,13 +103,13 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
                 Box(
                     modifier = Modifier
                         .size(160.dp)
-                        .border(1.dp, NeonBlue.copy(alpha = scanAlpha), CircleShape)
+                        .border(1.dp, CyberColors.NeonBlue.copy(alpha = scanAlpha), CircleShape)
                 )
                 // Outer static ring
                  Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .border(2.dp, NeonBlue.copy(alpha = 0.3f), CircleShape)
+                        .border(2.dp, CyberColors.NeonBlue.copy(alpha = 0.3f), CircleShape)
                 )
             }
             
@@ -119,18 +119,18 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
                     if (isScanning) p2pManager.startDiscovery() else p2pManager.stopDiscovery()
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (isScanning) CyberSurface else NeonBlue,
-                    contentColor = if (isScanning) NeonBlue else CyberBlack
+                    containerColor = if (isScanning) CyberColors.CyberSurface else CyberColors.NeonBlue,
+                    contentColor = if (isScanning) CyberColors.NeonBlue else CyberColors.CyberBlack
                 ),
                 shape = CircleShape,
                 modifier = Modifier
                     .size(100.dp) // Slightly smaller button to show radar better
                     .shadow(
                         elevation = if (isScanning) 0.dp else 20.dp,
-                        spotColor = NeonBlue,
+                        spotColor = CyberColors.NeonBlue,
                         shape = CircleShape
                     ),
-                border = if (isScanning) BorderStroke(2.dp, NeonBlue) else null
+                border = if (isScanning) BorderStroke(2.dp, CyberColors.NeonBlue) else null
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(
@@ -152,7 +152,7 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
         Text(
             text = "NEARBY DEVICES",
             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-            color = CyberTextSecondary,
+            color = CyberColors.CyberTextSecondary,
             modifier = Modifier.align(Alignment.Start)
         )
         
@@ -174,7 +174,7 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
                     )
                 }
                 if (devices.isEmpty()) {
-                   item { Text("Searching...", color = CyberTextSecondary, modifier = Modifier.padding(16.dp)) }
+                   item { Text("Searching...", color = CyberColors.CyberTextSecondary, modifier = Modifier.padding(16.dp)) }
                 }
             } else {
                 item {
@@ -184,7 +184,7 @@ fun DiscoverScreen(p2pManager: P2PManager, onNavigateToTransfer: () -> Unit) {
                             .padding(top = 32.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Tap SCAN to find devices", color = CyberTextSecondary.copy(alpha=0.5f))
+                        Text("Tap SCAN to find devices", color = CyberColors.CyberTextSecondary.copy(alpha=0.5f))
                     }
                 }
             }
@@ -197,9 +197,9 @@ fun DeviceItem(name: String, status: String, onConnect: () -> Unit) {
     val isConnecting = status == "Connecting..."
     
     Surface(
-        color = CyberSurface.copy(alpha = 0.6f),
+        color = CyberColors.CyberSurface.copy(alpha = 0.6f),
         shape = RoundedCornerShape(16.dp),
-        border = if (isConnecting) BorderStroke(1.dp, NeonPurple) else null,
+        border = if (isConnecting) BorderStroke(1.dp, CyberColors.NeonPurple) else null,
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
@@ -214,13 +214,13 @@ fun DeviceItem(name: String, status: String, onConnect: () -> Unit) {
                     modifier = Modifier
                         .size(48.dp)
                         .clip(CircleShape)
-                        .background(CyberDark),
+                        .background(CyberColors.CyberDark),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         Icons.Default.Devices, 
                         contentDescription = null, 
-                        tint = if (isConnecting) NeonPurple else NeonBlue
+                        tint = if (isConnecting) CyberColors.NeonPurple else CyberColors.NeonBlue
                     )
                 }
                 Spacer(modifier = Modifier.width(16.dp))
@@ -233,7 +233,7 @@ fun DeviceItem(name: String, status: String, onConnect: () -> Unit) {
                     Text(
                         text = status, 
                         style = MaterialTheme.typography.labelSmall, 
-                        color = if (isConnecting) NeonPurple else Color.Green
+                        color = if (isConnecting) CyberColors.NeonPurple else Color.Green
                     )
                 }
             }
@@ -241,18 +241,18 @@ fun DeviceItem(name: String, status: String, onConnect: () -> Unit) {
             if (isConnecting) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(24.dp),
-                    color = NeonPurple,
+                    color = CyberColors.NeonPurple,
                     strokeWidth = 2.dp
                 )
             } else {
                 Button(
                     onClick = onConnect,
-                    colors = ButtonDefaults.buttonColors(containerColor = NeonBlue.copy(alpha=0.1f)),
+                    colors = ButtonDefaults.buttonColors(containerColor = CyberColors.NeonBlue.copy(alpha=0.1f)),
                     contentPadding = PaddingValues(horizontal = 20.dp, vertical = 0.dp),
                     modifier = Modifier.height(36.dp),
-                    border = BorderStroke(1.dp, NeonBlue.copy(alpha=0.5f))
+                    border = BorderStroke(1.dp, CyberColors.NeonBlue.copy(alpha=0.5f))
                 ) {
-                    Text("Connect", color = NeonBlue, style = MaterialTheme.typography.labelSmall)
+                    Text("Connect", color = CyberColors.NeonBlue, style = MaterialTheme.typography.labelSmall)
                 }
             }
         }
