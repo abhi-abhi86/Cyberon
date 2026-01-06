@@ -1,4 +1,5 @@
-# Cyberon
+[![Stars](https://img.shields.io/github/stars/abhi-abhi86/disease-predictor?style=social)](https://github.com/abhi-abhi86/disease-predictor/stargazers)
+# Cyberon 
 
 ### 📥 Download
 - **[v2.1 (Glassmorphism UI & Features)](https://github.com/abhi-abhi86/Cyberon/raw/main/releases/Cyberon-v2.1-debug.apk)** - Latest
@@ -9,7 +10,7 @@
 - **UDP Discovery**: Fast local peer finding.
 - **Transfer History & Settings**: Full control.
 
-
+[![Stars](https://img.shields.io/github/stars/abhi-abhi86/disease-predictor?style=social)](https://github.com/abhi-abhi86/disease-predictor/stargazers)
 
 A secure, high-performance Android application that calculates file checksums (CRC32/SHA256) using a native C++ library integrated via JNI.
 
