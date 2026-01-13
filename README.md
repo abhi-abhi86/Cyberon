@@ -1,4 +1,5 @@
-[![Stars](https://img.shields.io/github/stars/abhi-abhi86/disease-predictor?style=social)](https://github.com/abhi-abhi86/disease-predictor/stargazers)
+#Not working
+
 # Cyberon 
 
 ### 📥 Download
